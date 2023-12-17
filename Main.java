@@ -1,13 +1,12 @@
-public static IntNode q3_buildList() {
+import java.util.*;
+public class Main {
+	public static Scanner input=new Scanner(System.in);
+	public static IntNode q3_buildList() {
+		IntNode list=new IntNode(-1);
+		IntNode first=list;
+		IntNode p;
 		System.out.println("enter a number ");
 		int num=input.nextInt();
-		if(num==-1)
-			return null;
-		IntNode list=new IntNode(num);
-		IntNode first=list;
-		IntNode p=list;
-		System.out.println("enter a number ");
-		num=input.nextInt();
 		while(num!=-1) {
 			p=new IntNode(num);
 			list.setNext(p);
@@ -15,5 +14,10 @@ public static IntNode q3_buildList() {
 			System.out.println("enter a number ");
 			num=input.nextInt();
 		}
-		return first;
+		return first.getNext();
 	}
+	public static void main(String[] args) {
+		System.out.println(q3_buildList());
+	}
+
+}
