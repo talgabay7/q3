@@ -16,6 +16,22 @@ public class Main {
 		}
 		return first.getNext();
 	}
+	public static IntNode q6_deleteNum(IntNode p,int num) {
+		if(p.getValue()==num) {
+			p=p.getNext();
+			return p;
+		}
+		IntNode list=p.getNext();
+		IntNode first=p;
+		while(list!=null) {
+			if(list.getValue()==num) {
+				p.setNext(p.getNext().getNext());
+			}
+			p=p.getNext();
+			list=list.getNext();
+		}
+		return first;
+	}
 	public static void main(String[] args) {
 		System.out.println(q3_buildList());
 	}
